@@ -1,0 +1,769 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Squada+One&display=swap');
+
+*,
+*::before,
+*::after{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    /* border: 1px solid white; */
+    outline: none;
+}
+
+:root{
+    /* background-color: ; */
+    --bg-white: #fff;
+    --bg-dark-color:#03262c;
+    --bg-green-color:#0a4603;
+    /* text */
+    --primary-text : #061738;
+    --secondary-color: #60cd12;
+    --light-color:#e2f6de;
+    --dark-color:#03262c;
+    --text-wite:#fff;
+    --text-gray:#dee2e6;
+    --anchor-color: #007aff;
+    /* font-family: ; */
+    --primary-font: 'Barlow Condensed', sans-serif;
+    --secondary-font:  "Roboto", sans-serif;
+}
+
+body,
+html{
+    color: var(--primary-text);
+    font-size: 10px;
+    font-weight: 400;
+    font-family: var(--primary-font);
+    scroll-behavior: smooth;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+.navbar-brand img{
+    height: 90px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+    margin: 0;
+}
+
+h1{
+    font-size: 9rem !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+    color: var(--primary-text) !important;
+}
+
+h2{
+    color: var(--primary-text);
+    font-size: 4.7rem !important;
+    font-weight: 600 !important;
+    display: inline-block;
+    text-transform: capitalize;
+    line-height: 1.2 !important;
+    margin-bottom: 2rem !important;
+}
+
+h3{
+    color: var(--text-wite);
+    font-size: 3.1rem !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+}
+
+h4{
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1;
+    color: var(--primary-text);
+}
+
+h5{
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    line-height: 1;
+    color: var(--text-wite) !important;
+}
+
+p{
+    font-size: 1.6rem; 
+    line-height: 1.6;
+    margin-top: 1rem;
+    color: var(--primary-text);
+    font-family:var(--secondary-font) ;
+}
+
+embed,
+iframe,
+img,
+object{
+    max-width: 100%;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a,
+a:active,
+a:focus,
+a:hover,
+button{
+    text-decoration: none !important;
+    outline: 0;
+}
+
+li a{
+    color: var(--text-wite);
+}
+
+a:hover,
+button:hover{
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    transition:all 0.3s ease-in ;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--text-wite);
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--secondary-color);
+}
+
+.main-btn{
+    position: relative;
+    color: var(--bg-white) !important;
+    background: linear-gradient(to right, #0f7404, #5cb917) !important;
+    z-index: 1;
+    overflow: hidden !important;
+    border: 0.2rem solid var(--bg-white) !important;
+    border-radius: 3.5rem !important;
+    text-transform: uppercase !important;
+    padding: 1rem 3.5rem !important;
+    font-weight: 600 !important;
+    font-size: 1.8rem !important;
+    margin-top: 1.5rem;
+    letter-spacing: 0.2rem;
+}
+.main-btn:hover{
+    background: var(--bg-white) !important;
+    color: var(--secondary-color) !important;
+    border: 0.2rem solid var(--secondary-color) !important;
+}
+
+.main-btn::before{
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(90deg, transparent, #03262c, transparent);
+    z-index: -1;
+    animation: borderMove 2s linear infinite;
+}
+
+@keyframes borderMove{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+section{
+    padding: 5rem 0 !important;
+}
+
+.section-title{
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--primary-text);
+    text-transform: capitalize !important;
+    margin-bottom: 2rem !important;
+}
+
+.section-sumtitle{
+    font-size: 1.6rem;
+    font-weight: 400 ;
+    color: var(--primary-text);
+    font-family: var(--secondary-font);
+    max-width: 40%;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize !important;
+}
+
+
+/* 01 navbar CSS */
+.header{
+    position: absolute;
+    width: 100%;
+    top: 2rem;
+    left: 0;
+    z-index:2;
+}
+
+.header .navbar{
+    background-color: var(--dark-color);
+    padding:1.5rem 5rem !important;
+}
+
+.header .navbar-brand .first-title{
+    color: var(--secondary-color);
+
+}
+
+.header .navbar-nav .nav-link{ 
+    color: var(--text-wite);
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    margin: 0 0.2rem;
+    font-family: var(--primary-font);
+}
+
+.header .navbar-nav .nav-link:hover,
+.header .navbar-nav .nav-link.active{
+    color: var(--secondary-color);
+}
+
+.header .navbar-toggler{
+    color: white !important;
+    font-size: 3rem;
+    height: 2.7rem;
+   padding: 0;
+}
+
+
+.header .navbar-toggler:focus,
+.header .navbar-toggler:active{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.header .header-right span{
+    color: var(--secondary-color);
+    display: block;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-right: 1rem;
+}
+
+.header .header-right .phone-nm{
+    color: var(--text-wite);
+    font-size: 1.6rem;
+}
+
+.header-scrolled{
+    position: fixed;
+    top: 0.4rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 1320px;
+    margin: auto;
+    z-index: 999;
+    transition: 0.3s all ease-in-out;
+}
+
+
+/* 02 Banner Section */
+.banner-section{
+    background:url('../Image/background-website.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    min-height: 90vh;
+}
+
+.banner-section .carousel-item{
+    padding: 3rem 0;
+    height: 90vh;
+}
+
+.banner-section .banner-content{
+    margin-top: 110px;
+}
+
+.banner-section .carousel-caption{
+    top: 30%;
+    bottom: 0;
+    left: 3%;
+    right: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.banner-section .carousel-caption h3{
+    padding: 0.5rem 1.5rem;
+    background-color: var(--dark-color);
+    display: inline;
+}
+
+.banner-section .carousel-caption p{
+    max-width: 40rem;
+    margin-bottom: 2rem;
+    margin-top: 8px;
+}
+
+/* 03 Features CSS */
+.features-section .features-box{
+    background-color: transparent;
+    border: 0.15rem solid var(--light-color);
+    padding:8rem 0 ;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.features-section .features-icon-border{
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0.2rem solid var(--light-color);
+    padding: 1.3rem;
+    display: inline-block;
+}
+
+.features-section .features-box .features-icon{
+    height: 6.5rem;
+    width: 6.5rem;
+    background-color: var(--light-color);
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.features-section .features-box .features-icon img{
+    width: 3.7rem;
+}
+
+.features-section .features-box h3{
+    color: var(--primary-text);
+    margin-top: 1.5rem;
+}
+
+.features-section .features-box:hover{
+    background-color: var(--bg-dark-color);
+    border-color: var(--dark-color);
+}
+
+.features-section .features-box:hover h3{
+    color: var(--text-wite);
+}
+
+.features-section .features-box:hover .features-icon-border{
+    border-color: var(--secondary-color);
+}
+/* 04 About section */
+.landing-about-section{
+    background-image: url(../Image/IMG_0199.PNG);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 9rem 0 !important;
+}
+
+.landing-about-section p{
+    color: var(--primary-text) !important;
+    margin-bottom: 2rem !important;
+}
+/* 05 product card design */
+.landing-product-section .product-card{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0.2rem solid var(--light-color) !important;
+    padding: 2rem 1rem;
+    transition: all 0.3s;
+    height: 100%;
+}
+
+.landing-product-section .product-card .product-img{
+    margin-bottom: 7rem ;
+    text-align: center;
+}
+
+.landing-product-section .product-card h3{
+    color: var(--primary-text);
+}
+
+.product-card span{
+    font-size: 1.8rem !important;
+    font-weight: 600 ;
+    text-transform: uppercase ;
+    color: var(--secondary-color);
+    margin-right: 0.5rem ;
+    text-decoration: line-through ;
+    transition: all 0.3s;
+}
+
+.product-card .product-detail{
+    position: absolute;
+    bottom: -22rem;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 5rem 1rem;
+    background-color: var(--dark-color);
+    transition: all 0.5s ease;
+}
+
+.product-card:hover .product-detail{
+    bottom: 0;
+}
+
+
+/* 06 Testimonial */
+.testimonial-section{
+    background-color: var(--light-color);
+    padding-bottom: 8rem;
+}
+
+.testimonial-section .carousel-indicators{
+    bottom: -6rem;
+}
+
+.testimonial-section .carousel-indicators button{
+    background-color: var(--dark-color);
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+}
+
+.testimonial-section .card{
+    background: url(../Image/green.bachground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: right;
+    padding: 5rem 5rem 5rem 0;
+    border-radius: 0 .5rem .5rem 0;
+    border: 0.1rem solid transparent;
+}
+
+.testimonial-section .profile-box{
+    padding: 1.875rem;
+    background-color: var(--dark-color);
+    border-radius: .5rem 0 0 .5rem;
+}
+
+.testimonial-section .profile-box img{
+    border-radius: .625rem 3.125rem; 
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.testimonial-section .desc-box{
+    padding-left: 3rem;
+}
+/* 07 Gallery CSS */
+
+.gellery-section .card{
+    height: 100%;
+}
+
+.gellery-section .card img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* 08 Footer */
+.footer-wrapper{
+    background-color: var(--dark-color);
+    padding-top: 15rem;
+    margin-bottom: 0;
+}
+
+.footer-wrapper h5{
+    color: var(--text-wite);
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer-wrapper ul li{
+    margin-bottom: 0.5rem;
+    list-style: none;
+}
+
+.footer-wrapper .company-details{
+    font-size: 1.4rem;
+}
+
+.footer-wrapper .contact-info li a{
+    color: var(--text-gray);
+    font-size: 1.6rem;
+}
+
+.footer-wrapper .link-widget li a,
+.footer-wrapper p{
+    color: var(--text-gray);
+    font-size: 1.6rem;
+    padding-left: 1.5rem;
+    position: relative;
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+ 
+.footer-wrapper .link-widget li a:before{
+    content: '\f105';
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    position:absolute ;
+    left: 0.3rem;
+    top: 50%;
+    -webkit-transform:translateY(-50%);
+    transform:translateY(-50%) ;
+} 
+
+.footer-wrapper .link-widget li a:hover{
+    margin-left: 0.5rem;
+    color: var(--secondary-color) !important;
+}  
+
+.footer-wrapper .social-network a{
+    width: 3.5rem;
+    height: 3.5rem;
+    line-height: 3.2rem;
+    margin: .5rem;
+    display: inline-block;
+    border: 0.125rem solid var(--text-gray);
+    color: var(--text-gray);
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 100%;
+    -webkit-transition:all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) ;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.footer-wrapper .social-network a:hover{
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--text-wite);
+    box-shadow: 0 0.625rem .9375rem 0 rgba(0 0 0 / 10%);
+    transform: translateY(-0.1875rem);
+}
+
+.footer-wrapper  .form-control{
+    font-size: 2rem;
+    color: var(--text-wite);
+}
+
+.footer-wrapper  .form-control::placeholder{
+    color: var(--text-wite);
+}
+
+.footer-wrapper .form-control:focus{
+    box-shadow: none;
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.copyright-section{
+    background-color: var(--secondary-color);
+    text-align: center;
+    margin-top: 0rem; 
+    padding-top: 0rem;
+}
+
+.copyright-section p{
+    margin-top: 0;
+    padding: 3rem 0;
+    line-height: 0;
+}
+
+.copyright-section a{
+    color: var(--primary-text);
+    font-weight: 600 !important;
+}
+
+/* 09 About page CSS */
+.about .about-details p{
+    color: var(--primary-text);
+} 
+
+/* 10 product page CSS */
+.product .product-detail{
+    margin-bottom: 1.5rem;
+}
+
+/* 11 contact page css */
+.contact .contact-form{
+    background-color: var(--light-color);
+    padding: 5rem;
+    box-shadow: 0 0.2rem 1.5rem rgb(0 0 0 / 30%);
+}
+
+.contact .contact-form .form-control:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.contact .contact-form .form-control::placeholder{
+    color: var(--primary-text);
+}
+
+.contact .contact-form .form-control{
+    padding: 1rem 1.5rem;
+    border-radius: 0rem;
+    border: 0.1rem solid var(--secondary-color);
+    color: var(--primary-text);
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-family: var(--secondary-font);
+}
+
+.contact .contact-form textarea{
+    min-height: 15rem;
+}
+
+.contact .contact-form .info-box li{
+    position: relative;
+    padding-left: 7rem;
+    padding-bottom: 3.5rem;
+    margin-bottom:2.9rem ;
+}
+
+.contact .contact-form  .info-box li i{
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    color: var(--primary-text);
+}
+
+.contact .contact-form  .info-box li p{
+    color: var(--primary-text);
+}
+
+.contact .contact-form  .info-box li a{
+    color: var(--dark-color);
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    font-family: var(--secondary-font);
+}
+
+/* responsive section start:*/
+/* Media Guery 1170px */
+@media (max-width:1170px){
+
+    /* General css */
+    .section-sumtitle{
+        max-width: 60%;
+    }
+
+   /* Banner Section */ 
+   .banner-section .carousel-item{
+    height: 90vh;
+   }
+
+}
+
+/* Media Guery 991px */
+@media(max-width:991px){
+
+    /* General css */
+    .about .banner_section,
+    .product .banner_section,
+    .gallery .banner_section,
+    .contact .banner_section{
+    padding-top: 12.5rem;
+    padding-bottom: 3rem;
+}
+    /* navbar CSS */
+     .section-sumtitle{
+        max-width: 60%;
+    }
+    /* navbar CSS */
+        .navbar-collapse{
+        height: 270px;
+        transition: height 0.3s;
+}
+}     .header .navbar{
+        background-size: cover;
+        padding: 2rem;
+    }
+
+    .header .navbar-nav{
+        margin-top: 2rem;
+    }
+
+    .header .navbar-nav .nav-link{
+        padding: 0.2rem 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .header .header-right span{
+        padding: 0.2rem 0.5rem;
+    }
+
+
+
+/* Media Guery 767px */
+@media(max-width:767px){
+
+    /* General css */
+    body,html{
+        font-size: 8px;
+    }
+
+    .navbar-collapse{
+        height: 300px;
+        transition: 0.3s ;
+}
+
+    .navbar-collapse{
+        height: 225px;
+        transition: 0.3s;
+    }
+
+    .section-sumtitle{
+        max-width: 80%;
+    }
+    /* Banner Section */
+    .banner-section{
+        min-height: 70vh;
+    }
+
+    .banner-section .carousel-item{
+        height: 70vh;
+    }
+}
+
+/* Media Guery 590px */
+@media(max-width:590px){
+    body,html{
+        font-size: 7px;
+    }
+
+    .navbar-collapse{
+        height: 200px;
+        transition: 0.3s;
+}
+}
